@@ -2,13 +2,11 @@
 FROM ubuntu:latest
 RUN apt-get update \
     && apt-get install -y \
-        python3
+        python3 \
+        git 
 
 ARG repository=https://github.com/lovendatj/password-manager.git
 
-RUN git clone $repository && \
-    cd password-manager && \
+RUN git clone $repository && cd password-manager && \
     python3 -m pip install -r requirements.txt && \
-    python3 manage.py makemigrations && \
-    python3 manage.py migrate && \
-    python3 manage.py runserver
+    python3 test.py

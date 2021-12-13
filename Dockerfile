@@ -11,7 +11,7 @@ ARG repository=https://github.com/lovendatj/password-manager.git
 
 RUN git clone $repository && cd /password-manager && \ 
         python3 -m pip install -r requirements.txt
-
 WORKDIR /password-manager
+RUN echo pwd
 
- CMD pwd; \ ~/postgresql_conf.sh
+ RUN ~/postgresql_conf.sh

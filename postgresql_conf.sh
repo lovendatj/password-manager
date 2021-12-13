@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt install postgresql postgresql-contrib
 read -p "Enter the username for the postgresql database: " username
 read -sp "Enter the password for the postgresql database: " password

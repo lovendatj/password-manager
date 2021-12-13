@@ -14,4 +14,4 @@ RUN git clone $repository && cd /password-manager && \
 
 WORKDIR /password-manager
 
- CMD ls -la
+ CMD pwd; \ ~/postgresql_conf.sh

@@ -9,9 +9,6 @@ RUN apt-get update && apt-get install -y \
 
 ARG repository=https://github.com/lovendatj/password-manager.git
 
-RUN git clone $repository && cd /password-manager && \ 
-        python3 -m pip install -r requirements.txt
-WORKDIR /password-manager
-RUN echo pwd
-
- RUN ~/postgresql_conf.sh
+RUN git clone $repository && \
+    cd /password-manager && \ 
+    ./postgresql_conf.sh
